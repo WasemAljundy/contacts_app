@@ -1,0 +1,12 @@
+{
+    "main" : "الرئيسية",
+    "create_contact" : "انشئ جهة الاتصال",
+    "update_contact" : "تحديث جهة الاتصال",
+    "enter_new_contact_details" : "ادخل بيانات جهة الاتصال",
+    "update_the_contact_details" : "حدث بيانات جهة الاتصال",
+    "enter_required_data" : "ادخل بيانات صالحة",
+    "no_data" : "لا يوجد بيانات",
+    "name" : "الاسم",
+    "number" : "الرقم",
+    "save" : "حفظ"
+}

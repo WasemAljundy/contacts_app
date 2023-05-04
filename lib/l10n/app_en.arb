@@ -1,0 +1,12 @@
+{
+    "main" : "Main",
+    "create_contact" : "Create Contact",
+    "update_contact" : "Update Contact",
+    "enter_new_contact_details" : "Enter new Contact details",
+    "update_the_contact_details" : "Update the Contact details",
+    "enter_required_data" : "Enter required data!",
+    "no_data" : "No Data!",
+    "name" : "Name",
+    "save" : "Save",
+    "number" : "Number"
+}
