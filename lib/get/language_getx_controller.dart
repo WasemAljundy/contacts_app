@@ -16,6 +16,5 @@ class LanguageGetxController extends GetxController {
   void changeLanguage() {
     language.value = language.value == 'en' ? 'ar' : 'en';
     SharedPrefController().setLanguages(language: language.value);
-    print('language ${language.value}');
   }
 }

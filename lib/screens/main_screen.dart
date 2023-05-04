@@ -1,5 +1,6 @@
 import 'package:database_flutter/get/contact_getx_controller.dart';
 import 'package:database_flutter/get/language_getx_controller.dart';
+import 'package:database_flutter/get/theme_getx_controller.dart';
 import 'package:database_flutter/helpers/helpers.dart';
 import 'package:database_flutter/screens/update_contact_screen.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -29,16 +30,22 @@ class _MainScreenState extends State<MainScreen> with Helpers {
         title: Text(AppLocalizations.of(context)!.main),
         actions: [
           IconButton(
-            icon: const Icon(Icons.add),
             onPressed: () {
-              Navigator.pushNamed(context, '/create_contact_screen');
+              ThemeGetxController.to.changeTheme();
             },
+            icon: const Icon(Icons.dark_mode_outlined),
           ),
           IconButton(
             icon: const Icon(Icons.logout),
             onPressed: () async {
               await Get.delete<ContactGetxController>();
               Navigator.pushReplacementNamed(context, '/launch_screen');
+            },
+          ),
+          IconButton(
+            icon: const Icon(Icons.add),
+            onPressed: () {
+              Navigator.pushNamed(context, '/create_contact_screen');
             },
           ),
         ],

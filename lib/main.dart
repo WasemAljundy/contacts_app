@@ -1,5 +1,6 @@
 import 'package:database_flutter/database/db_controller.dart';
 import 'package:database_flutter/get/language_getx_controller.dart';
+import 'package:database_flutter/get/theme_getx_controller.dart';
 import 'package:database_flutter/prefs/shared_prefs_controller.dart';
 import 'package:database_flutter/screens/create_contact_screen.dart';
 import 'package:database_flutter/screens/launch_screen.dart';
@@ -20,6 +21,8 @@ class MyApp extends StatelessWidget {
 
   final LanguageGetxController _languageGetxController =
       Get.put<LanguageGetxController>(LanguageGetxController());
+  final ThemeGetxController _themeGetxController =
+      Get.put<ThemeGetxController>(ThemeGetxController());
 
   @override
   Widget build(BuildContext context) {
@@ -28,6 +31,7 @@ class MyApp extends StatelessWidget {
         localizationsDelegates: AppLocalizations.localizationsDelegates,
         supportedLocales: AppLocalizations.supportedLocales,
         locale: Locale(_languageGetxController.language.value),
+        theme: _themeGetxController.darkTheme.value ? ThemeData.dark() : ThemeData.light(),
         initialRoute: '/launch_screen',
         routes: {
           '/launch_screen': (context) => const LaunchScreen(),

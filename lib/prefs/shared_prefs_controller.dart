@@ -1,7 +1,7 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
 enum PrefKeys {
-  language,
+  language, darkTheme
 }
 class SharedPrefController {
 
@@ -21,6 +21,12 @@ class SharedPrefController {
   Future<void> setLanguages({required String language}) async {
     await _sharedPreferences.setString(PrefKeys.language.toString(), language);
   }
+
+  Future<bool> changeTheme({required bool darkTheme}) async {
+    return await _sharedPreferences.setBool(PrefKeys.darkTheme.toString(), darkTheme);
+  }
+
+  bool get darkTheme => _sharedPreferences.getBool(PrefKeys.darkTheme.toString()) ?? false;
 
   String get language => _sharedPreferences.getString(PrefKeys.language.toString()) ?? 'en';
 }
